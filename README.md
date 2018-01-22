@@ -20,4 +20,3 @@ Also make sure to set your [environment variable](https://en.wikipedia.org/wiki/
 6.  Lint: `npm run lint`
 7.  Start the app: `npm start`
 8.  Rebuild and start the app: `npm run restart`
-# rabbish-carrish
