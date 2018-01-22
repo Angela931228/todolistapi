@@ -31,7 +31,11 @@ ToDoItem.update = function(id, attr, val, callback) {
 }
 
 ToDoItem.deleteById = function(id, callback) {
-
+  todoRef.child(todoId).remove().then(() => {
+    callback(null);
+  }).catch((error) => {
+    callback(error);
+  })
 }
 ToDoItem.getByUserId = function(userId, callback) {
   todoRef.orderByChild('userId')

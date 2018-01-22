@@ -39,11 +39,11 @@ router.put('/todoItem/:todoId/:todoDeadline', (req, res) => {
 
 router.delete('/todoItem/:todoId', (req, res) => {
   var todoId = req.params.todoId;
-  todoRef.child(todoId).remove().then(() => {
-    res.status(200).send({result:'success'});
-  }).catch((error) => {
-    res.status(500).send({result:'failed'});
-  })
+  TodoItem.deleteById(todoId, function ( err) {
+        if (err || typeof err !== 'undefined') 
+          return res.status(500).send(err);
+        res.status(200).send({result:"success"});
+    });
 });
 
 router.get('/todoItems/:userId', (req, res) => {
