@@ -30,7 +30,10 @@ ToDoItem.update = function(id, attr, val, callback) {
   });
 }
 
-ToDoItem.deleteById = function(userId, callback) {
+ToDoItem.deleteById = function(id, callback) {
+
+}
+ToDoItem.getByUserId = function(userId, callback) {
   todoRef.orderByChild('userId')
   .equalTo(userId).once('value', (snapshot) => {
     var todoItems = [];
@@ -40,5 +43,4 @@ ToDoItem.deleteById = function(userId, callback) {
     callback(todoItems);
   });
 }
-
 module.exports = ToDoItem;

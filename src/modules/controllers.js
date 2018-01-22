@@ -48,7 +48,7 @@ router.delete('/todoItem/:todoId', (req, res) => {
 
 router.get('/todoItems/:userId', (req, res) => {
   var userId = req.params.userId;
-  TodoItem.deleteById(userId, function(todoItems){
+  TodoItem.getByUserId(userId, function(todoItems){
     res.status(200).send(todoItems);
   }
 });
