@@ -50,7 +50,7 @@ router.get('/todoItems/:userId', (req, res) => {
   var userId = req.params.userId;
   TodoItem.getByUserId(userId, function(todoItems){
     res.status(200).send(todoItems);
-  }
+  });
 });
 
 export default router
