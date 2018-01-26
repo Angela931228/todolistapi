@@ -1,5 +1,4 @@
 import express from 'express'
-import './modules/load'
 import './modules/firebase'
 import './modules/controllers'
 import router from './modules/controllers'
